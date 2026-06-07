@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梅傲寒 | AI 应用开发 & AI 产品经理 个人主页</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme dev-active">
+    <!-- 背景画布：粒子动态效果 -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- 顶部极光流光背景层 -->
+    <div class="aurora-glow glow-1"></div>
+    <div class="aurora-glow glow-2"></div>
+
+    <div class="app-container">
+        <!-- 侧边栏：个人名片 -->
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <img src="avatar.png" alt="梅傲寒" class="profile-avatar">
+                    <div class="status-indicator online" title="智能体运行中"></div>
+                </div>
+                <h1 class="profile-name">梅傲寒</h1>
+                <p class="profile-title Outfit">Mei Aohan</p>
+                <div class="profile-tagline">
+                    土木与 AI 交叉背景，用 Agent 智能体赋能高精尖仿真与调度场景
+                </div>
+
+                <!-- 视角切换器 -->
+                <div class="role-switcher-container">
+                    <span class="switcher-label">当前视角</span>
+                    <div class="role-switcher">
+                        <button class="role-btn btn-dev active" onclick="switchRole('dev')">
+                            <i class="fa-solid fa-code"></i> AI 开发
+                        </button>
+                        <button class="role-btn btn-pm" onclick="switchRole('pm')">
+                            <i class="fa-solid fa-compass"></i> AI 产品
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 基本信息 -->
+                <div class="profile-info-list">
+                    <div class="info-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div class="info-content">
+                            <span class="info-label">教育背景</span>
+                            <span class="info-val">西南交通大学 硕士在读</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="info-content">
+                            <span class="info-label">电子邮件</span>
+                            <a href="mailto:mahm8811@163.com" class="info-val">mahm8811@163.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="info-content">
+                            <span class="info-label">联系电话</span>
+                            <span class="info-val">(+86) 183-8502-8811</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="info-content">
+                            <span class="info-label">求职意向</span>
+                            <span class="info-val role-text">AI应用开发 / AI产品经理</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 社交/开源链接 -->
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:mahm8811@163.com" class="social-icon" title="联系我"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" title="微信: mahm8811"><i class="fa-brands fa-weixin"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 个人简介卡片 -->
+            <section class="content-section card-glass intro-section">
+                <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> 个人简介</h2>
+                <div class="dev-content">
+                    <p class="paragraph">
+                        推免至西南交通大学攻读硕士（前 8%），主攻智慧交通大模型应用与智能决策。掌握运筹优化算法与大模型核心技术，致力于将前沿的<strong>反思型智能体（Reflexion Agent）</strong>和<strong>模型上下文协议（MCP）</strong>标准应用于复杂工业 CAE 仿真和设备调度等重工业垂直场景，从零构建了 CAE-Agent 等多个高可用系统。
+                    </p>
+                </div>
+                <div class="pm-content">
+                    <p class="paragraph">
+                        具备交叉学科背景与优秀的市场敏锐度，主导了 RAG 与多智能体等 AI 产品的 0 到 1 全生命周期设计。秉承<strong>“评测即产品”</strong>的迭代思维，善于利用 RAGAS、LLM-as-a-Judge 对复杂大模型项目进行量化评测与降本优化。曾任学生会轮值主席，统筹千人级大型项目交付，具备高抗压与出色的跨团队协同能力。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 核心技能栈 -->
+            <section class="content-section card-glass skills-section">
+                <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> 核心技能图谱</h2>
+                <div class="skills-grid dev-content">
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-robot"></i> AI & Agent 编排</h3>
+                        <div class="skill-tags">
+                            <span class="tag">LangChain</span>
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">Reflexion 闭环</span>
+                            <span class="tag">FastMCP / MCP</span>
+                            <span class="tag">ChromaDB 向量库</span>
+                            <span class="tag">RAG 混合检索</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-code-branch"></i> 后端与工程开发</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">SpringBoot</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Pytest E2E</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-calculator"></i> 运筹优化与算法</h3>
+                        <div class="skill-tags">
+                            <span class="tag">NSGA-II 算法</span>
+                            <span class="tag">A* 算法启发式重构</span>
+                            <span class="tag">熵权-TOPSIS</span>
+                            <span class="tag">支持向量机 (SVM)</span>
+                            <span class="tag">随机森林</span>
+                            <span class="tag">K-Means</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-grid pm-content">
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-chart-line"></i> AI 评测与优化</h3>
+                        <div class="skill-tags">
+                            <span class="tag">RAGAS 评估指标</span>
+                            <span class="tag">LLM-as-a-Judge</span>
+                            <span class="tag">提示词工程 (Prompt)</span>
+                            <span class="tag">A/B 测试</span>
+                            <span class="tag">数据驱动设计</span>
+                            <span class="tag">DeepSeek 裁判选型</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-compass"></i> 产品规划与需求</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Visio 业务流</span>
+                            <span class="tag">Xmind 架构图</span>
+                            <span class="tag">Axure 原型设计</span>
+                            <span class="tag">竞品分析</span>
+                            <span class="tag">PRD 需求拆解</span>
+                            <span class="tag">用户痛点挖掘</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-users-gear"></i> 项目统筹与管理</h3>
+                        <div class="skill-tags">
+                            <span class="tag">全生命周期项目管理</span>
+                            <span class="tag">千人晚会“零事故”统筹</span>
+                            <span class="tag">跨部门沟通</span>
+                            <span class="tag">风险预案拟定</span>
+                            <span class="tag">高抗压交付</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心项目经历 -->
+            <section class="content-section card-glass projects-section">
+                <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> 核心项目经历</h2>
+                
+                <!-- 项目一: CAE-Agent -->
+                <div class="project-card neon-border-blue">
+                    <div class="project-header">
+                        <div class="project-info">
+                            <span class="project-badge">核心系统</span>
+                            <h3 class="project-name">基于多智能体协同的 CAE 仿真决策系统</h3>
+                        </div>
+                        <span class="project-time">2025.12 - 至今</span>
+                    </div>
+                    
+                    <!-- 核心收益大字 -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-blue">4 h</span>
+                            <span class="metric-label">仿真调参周期 (原 3 天)</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-purple">85% +</span>
+                            <span class="metric-label">全链路仿真成功率</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-cyan">-60%</span>
+                            <span class="metric-label">整体 Token 消耗</span>
+                        </div>
+                    </div>
+
+                    <!-- 动态切换内容 -->
+                    <div class="dev-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-code"></i> 开发架构亮点</h4>
+                        <ul class="bullet-list">
+                            <li>使用 <strong>LangGraph</strong> 编排“意图解析-多路发散-结果收敛”的仿真决策拓扑有向有权图。</li>
+                            <li>设计**双核心记忆架构**：滑动窗口 Compressor 压缩短期记忆，Chromadb 存储历史仿真成功参数大坝，新会话自动闪回匹配。</li>
+                            <li>引入 <strong>FastMCP 标准协议</strong> 构建工具链，将 RAG 系统包装为外部 MCP Server 并利用 HTTP + SSE 通信。</li>
+                            <li>搭建独立仿真沙箱执行 Python/Abaqus 脚本，开发 <strong>Critic 物理准入闸门</strong> 进行 Reflexion 反思重试，引入 Pytest E2E 校验。</li>
+                        </ul>
+                    </div>
+                    <div class="pm-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-compass"></i> 产品设计亮点</h4>
+                        <ul class="bullet-list">
+                            <li>针对“人工仿真调参门槛高、试错成本贵、多方案比对难”的痛点，主导了 0-1 产品路径和功能地图。</li>
+                            <li>定义“自然语言指令直达 Abaqus 物理引擎”的低代码工作流，大幅降低非专业人员的使用壁垒。</li>
+                            <li>设计双路策略 Agent 对比收敛机制，由 Planner 分发至偏好安全边界与偏好极限寻优的智能体，自收敛出最佳方案。</li>
+                            <li>引入 A/B 测试支持模型提示词的演进评估，实现业务效能的跨越式提升。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 交互式架构折叠 -->
+                    <div class="accordion-container">
+                        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <i class="fa-solid fa-network-wired"></i> 点击查看 CAE-Agent 运行拓扑图 <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="mermaid-mock">
+                                <svg viewBox="0 0 800 240" class="svg-graph">
+                                    <!-- 节点定义 -->
+                                    <rect x="20" y="90" width="120" height="40" rx="6" class="node start-node" />
+                                    <text x="80" y="115" class="node-text">用户意图输入</text>
+                                    
+                                    <path d="M 140 110 L 190 110" class="line-arrow" marker-end="url(#arrow)" />
+                                    
+                                    <rect x="190" y="90" width="120" height="40" rx="6" class="node" />
+                                    <text x="250" y="115" class="node-text">Planner意图分流</text>
+
+                                    <!-- 分流线 -->
+                                    <path d="M 310 110 L 350 50 L 390 50" class="line-arrow" marker-end="url(#arrow)" />
+                                    <path d="M 310 110 L 350 170 L 390 170" class="line-arrow" marker-end="url(#arrow)" />
+
+                                    <rect x="390" y="30" width="120" height="40" rx="6" class="node chat-node" />
+                                    <text x="450" y="55" class="node-text">Chat/MCP 检索</text>
+
+                                    <rect x="390" y="150" width="120" height="40" rx="6" class="node sim-node" />
+                                    <text x="450" y="175" class="node-text">Extractor 参数提取</text>
+
+                                    <path d="M 510 170 L 560 170" class="line-arrow" marker-end="url(#arrow)" />
+
+                                    <rect x="560" y="150" width="100" height="40" rx="6" class="node sim-node" />
+                                    <text x="610" y="175" class="node-text">沙箱执行</text>
+
+                                    <path d="M 660 170 L 710 170" class="line-arrow" marker-end="url(#arrow)" />
+
+                                    <rect x="710" y="150" width="70" height="40" rx="6" class="node end-node" />
+                                    <text x="745" y="175" class="node-text">Critic准入</text>
+
+                                    <!-- 反思自愈流线 -->
+                                    <path d="M 745 150 C 745 100, 450 100, 450 150" class="line-arrow reflex-arrow" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+                                    <text x="600" y="115" class="reflex-text">物理异常 (Reflexion 自愈重试)</text>
+                                    
+                                    <!-- 箭头定义 -->
+                                    <defs>
+                                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b5bdb" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目二: AgentOps -->
+                <div class="project-card neon-border-purple">
+                    <div class="project-header">
+                        <div class="project-info">
+                            <span class="project-badge purple">独立自研</span>
+                            <h3 class="project-name">AgentOps 智能体全链路监控与量化评测平台</h3>
+                        </div>
+                        <span class="project-time">2025.10 - 2026.03</span>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-purple">-70%</span>
+                            <span class="metric-label">人工 Review 审查成本</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-blue">5 min</span>
+                            <span class="metric-label">全链路故障精准定位</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-cyan">100%</span>
+                            <span class="metric-label">评测引擎自动覆盖率</span>
+                        </div>
+                    </div>
+
+                    <div class="dev-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-code"></i> 开发架构亮点</h4>
+                        <ul class="bullet-list">
+                            <li>封装<strong>低侵入式埋点探针探针</strong>，通过 Python 装饰器和上下文管理器追踪智能体 Token、节点延迟及 Trace。</li>
+                            <li>设计跨多进程/MCP 协议的 Trace ID 透传方案，支持调用链路的无缝追踪。</li>
+                            <li>集成 <strong>RAGAS 框架</strong>（忠实度、相关度评分）与 <strong>LLM-as-a-Judge</strong> 架构，通过 DeepSeek 裁判自动化监控工具调用合理性。</li>
+                            <li>使用 <strong>Streamlit</strong> 与 <strong>Plotly</strong> 绘制层级瀑布流图表，提供直观的耗时下钻分析。</li>
+                        </ul>
+                    </div>
+                    <div class="pm-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-compass"></i> 产品设计亮点</h4>
+                        <ul class="bullet-list">
+                            <li>针对“Agent 运行黑盒化、RAG 质量难评估”的管理痛点，以“评测即产品”的产品思维独立孵化监控看板。</li>
+                            <li>打通“数据监控-缺陷评估-提示词反馈-迭代优化”的产研效率双轨闭环。</li>
+                            <li>定义面向开发、测试与运营团队的统一故障大盘，使系统故障定位定位缩短至 5 分钟内。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 项目三: 基建动态配置调度 -->
+                <div class="project-card neon-border-cyan">
+                    <div class="project-header">
+                        <div class="project-info">
+                            <span class="project-badge cyan">算法项目</span>
+                            <h3 class="project-name">面向智慧交通基建的装备动态配置与智能调度系统</h3>
+                        </div>
+                        <span class="project-time">2024.10 - 2025.09</span>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-cyan">+21.5%</span>
+                            <span class="metric-label">总体施工工效提升</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-blue">+22.5%</span>
+                            <span class="metric-label">全局路径搜索效率</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-num text-glow-purple">&lt; 1 s</span>
+                            <span class="metric-label">动态避障路径规划延迟</span>
+                        </div>
+                    </div>
+
+                    <div class="dev-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-code"></i> 核心算法设计</h4>
+                        <ul class="bullet-list">
+                            <li>融合 <strong>NSGA-II 遗传算法与熵权-TOPSIS</strong> 模型，求解工期-成本多目标平衡最优的配置矩阵。</li>
+                            <li>针对隧道窄通道等约束场景，<strong>重构 A* 启发式代估函数</strong>并进行搜索树修剪，解决路径冲突问题。</li>
+                            <li>后端基于 SpringBoot 搭建，实现算力与数据库逻辑的可靠交互。</li>
+                            <li>成果获得**一项国家发明专利**，获得智能建造创新大赛全国三等奖。</li>
+                        </ul>
+                    </div>
+                    <div class="pm-content">
+                        <h4 class="sub-header"><i class="fa-solid fa-compass"></i> 项目交付与落地</h4>
+                        <ul class="bullet-list">
+                            <li>实地调研施工队，建立 500+ 用户场景样本库，使用 Origin 进行业务场景的数字化提取。</li>
+                            <li>将繁琐的调度参数提纯为配置卡片与工效对比面板，打通硬件参数向业务指标的转换。</li>
+                            <li>通过合理的阶段性排期管理，协调机械工程与算法团队，成功落地真实公路智慧工地。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 校园经历 (主要在 PM 视图展示) -->
+            <section class="content-section card-glass campus-section pm-content">
+                <h2 class="section-title"><i class="fa-solid fa-users"></i> 校园经历与社会实践</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-info">
+                            <h4>西南交通大学土木工程学院学生会 轮值主席</h4>
+                            <span class="timeline-date">2022.06 - 2023.06</span>
+                        </div>
+                        <p class="timeline-desc">
+                            作为第一责任人统筹管理 12 项校/院级大型活动，主导超 1000 人次大型晚会全周期执行并实现“零事故”交付；优化跨部门协同机制与工作标准，具有极强项目推进力和协作能力。
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-info">
+                            <h4>老旧社区适老化改造专项调研 核心成员</h4>
+                            <span class="timeline-date">2022.07 - 2023.05</span>
+                        </div>
+                        <p class="timeline-desc">
+                            国家级大创项目。统筹资源并开展实地调研，清洗回收 500+ 真实样本；利用 Origin 进行数据可视化，独立分析社区安防/消防场景痛点，协助团队完成近 6 万字结题报告。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 极客终端 (Terminal Widget) -->
+            <section class="content-section card-glass terminal-section">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="term-btn term-red"></span>
+                        <span class="term-btn term-yellow"></span>
+                        <span class="term-btn term-green"></span>
+                    </div>
+                    <span class="terminal-title">MeiAohan@Workspace:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-screen">
+                    <div class="terminal-line">Welcome to Mei Aohan's interactive profile. Type <span class="term-highlight">help</span> to see available commands.</div>
+                    <div class="terminal-line last-input-line">
+                        <span class="terminal-prompt">Guest@MeiAohan:~$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" autofocus>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="app-footer">
+        <p>© 2026 梅傲寒 | Built with HTML5, CSS3 and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
