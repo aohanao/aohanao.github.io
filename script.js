@@ -173,7 +173,7 @@ function executeCommand(cmd) {
             printToTerminal('>>> 正在拉取联系人名片...');
             printToTerminal('📱 电话/微信: (+86) 183-8502-8811');
             printToTerminal('📧 电子邮件: mahm8811@163.com');
-            printToTerminal('🐙 GitHub: github.com/YOUR_GITHUB_USERNAME');
+            printToTerminal('🐙 GitHub: <a href="https://github.com/aohanao" target="_blank" style="color: #00f2fe; text-decoration: underline;">github.com/aohanao</a>');
             break;
         case 'clear':
             // 移除除最后输入行以外的所有子节点
