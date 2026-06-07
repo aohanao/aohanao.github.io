@@ -815,6 +815,184 @@ body.pm-active .pm-content {
     transform: translate(-50%, 0);
 }
 
+/* 顶部 Tab 导航 */
+.portfolio-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding: 6px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-x: auto;
+}
+.portfolio-nav::-webkit-scrollbar {
+    height: 4px;
+}
+.portfolio-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+.nav-tab {
+    background: transparent;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+.nav-tab:hover {
+    color: var(--color-text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+.nav-tab.active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--neon-blue), #1e5bb8);
+    box-shadow: 0 0 12px var(--neon-blue-glow);
+}
+
+/* Tab pane 显示与动画 */
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+    animation: tabFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 项目详情专属样式 */
+.project-detail-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 15px;
+}
+.project-detail-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+.project-detail-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.detail-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.detail-badge.dev-badge {
+    border-color: rgba(56, 139, 253, 0.25);
+    color: #a5d6ff;
+}
+.detail-badge.pm-badge {
+    border-color: rgba(188, 140, 255, 0.25);
+    color: #dcbdfb;
+}
+.project-links-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+.btn-link {
+    background: linear-gradient(135deg, var(--neon-blue), #1e5bb8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all var(--transition-speed);
+    box-shadow: 0 0 10px var(--neon-blue-glow);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--neon-blue-glow);
+}
+.btn-link.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-main);
+    box-shadow: none;
+}
+.btn-link.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+.detail-section {
+    margin-bottom: 25px;
+}
+.detail-section h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.detail-section h3 i {
+    color: var(--neon-blue);
+    font-size: 1rem;
+}
+.detail-bullets li {
+    font-size: 0.9rem !important;
+}
+.detail-bullets li::before {
+    color: var(--neon-blue) !important;
+}
+.sub-tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+.sub-tech-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 16px;
+    transition: transform var(--transition-speed);
+}
+.sub-tech-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(56, 139, 253, 0.15);
+}
+.sub-tech-card h4 {
+    font-size: 0.92rem;
+    color: var(--neon-blue);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.sub-tech-card p {
+    font-size: 0.84rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
 /* 响应式适配 */
 @media (max-width: 900px) {
     .app-container {

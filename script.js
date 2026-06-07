@@ -22,7 +22,7 @@ function switchRole(role) {
 
 // 复制微信号并弹出通知
 function copyWeChat() {
-    const wechatId = '183-8502-8811';
+    const wechatId = '18385028811';
     navigator.clipboard.writeText(wechatId).then(() => {
         showNotification('微信号 ' + wechatId + ' 已复制到剪贴板！');
     }).catch(err => {
@@ -39,6 +39,38 @@ function copyWeChat() {
         }
         document.body.removeChild(textArea);
     });
+}
+
+// Tab 切换逻辑
+function switchTab(tabId) {
+    // 切换 Tab Pane
+    const panes = document.querySelectorAll('.tab-pane');
+    panes.forEach(pane => pane.classList.remove('active'));
+    
+    const targetPane = document.getElementById('tab-' + tabId);
+    if (targetPane) targetPane.classList.add('active');
+    
+    // 切换 Tab 按钮激活状态
+    const tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(tabId)) {
+            tab.classList.add('active');
+        }
+    });
+    
+    // 如果是简历Tab，显示侧边栏的角色切换器，否则隐藏
+    const switcher = document.getElementById('sidebar-role-switcher');
+    if (switcher) {
+        if (tabId === 'resume') {
+            switcher.style.display = 'block';
+        } else {
+            switcher.style.display = 'none';
+        }
+    }
+    
+    // 平滑滚动回顶部
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showNotification(msg) {
