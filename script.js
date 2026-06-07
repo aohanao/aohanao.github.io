@@ -20,11 +20,45 @@ function switchRole(role) {
     }
 }
 
-// CAE-Agent 运行图折叠
-function toggleAccordion(btn) {
-    btn.classList.toggle('active');
-    const content = btn.nextElementSibling;
-    content.classList.toggle('open');
+// 复制微信号并弹出通知
+function copyWeChat() {
+    const wechatId = '183-8502-8811';
+    navigator.clipboard.writeText(wechatId).then(() => {
+        showNotification('微信号 ' + wechatId + ' 已复制到剪贴板！');
+    }).catch(err => {
+        // 回退逻辑
+        const textArea = document.createElement('textarea');
+        textArea.value = wechatId;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showNotification('微信号 ' + wechatId + ' 已复制到剪贴板！');
+        } catch (e) {
+            alert('微信号: ' + wechatId);
+        }
+        document.body.removeChild(textArea);
+    });
+}
+
+function showNotification(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, 2500);
 }
 
 // --- 极客网页模拟终端 (Terminal Simulator) ---

@@ -1,23 +1,22 @@
 /* 全局重置与设计系统变量 */
 :root {
-    --bg-darker: #06070a;
-    --bg-dark: #0b0d13;
-    --bg-glass: rgba(13, 17, 23, 0.65);
-    --border-glass: rgba(56, 139, 253, 0.12);
+    --bg-darker: #020713;       /* 炫光深蓝底色 */
+    --bg-dark: #040d24;         /* 深蓝 */
+    --bg-glass: rgba(6, 17, 43, 0.7); /* 深蓝透光玻璃 */
+    --border-glass: rgba(0, 242, 254, 0.18); /* 青蓝色霓虹发光边框 */
     
     --color-text-main: #f0f6fc;
-    --color-text-muted: #8b949e;
+    --color-text-muted: #94a3b8; /* 更亮、更易读的石板蓝 */
     
     /* 霓虹极光色板 */
     --neon-blue: #388bfd;
-    --neon-blue-glow: rgba(56, 139, 253, 0.35);
+    --neon-blue-glow: rgba(56, 139, 253, 0.45);
     
     --neon-purple: #bc8cff;
-    --neon-purple-glow: rgba(188, 140, 255, 0.35);
+    --neon-purple-glow: rgba(188, 140, 255, 0.4);
     
-    --neon-cyan: #39d353; /* 绿色或青色调 */
     --neon-cyan-real: #00f2fe;
-    --neon-cyan-glow: rgba(0, 242, 254, 0.35);
+    --neon-cyan-glow: rgba(0, 242, 254, 0.45);
     
     --transition-speed: 0.3s;
 }
@@ -29,7 +28,8 @@
 }
 
 body {
-    background-color: var(--bg-darker);
+    background: radial-gradient(circle at 50% 50%, #081a3e 0%, #020713 100%);
+    background-attachment: fixed;
     color: var(--color-text-main);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     overflow-x: hidden;
@@ -49,35 +49,58 @@ body {
     pointer-events: none;
 }
 
-/* 极光背景光晕 */
+/* 炫光流动背景光晕 */
 .aurora-glow {
     position: fixed;
-    width: 45vw;
-    height: 45vw;
     border-radius: 50%;
     filter: blur(140px);
-    opacity: 0.12;
-    z-index: -1;
     pointer-events: none;
+    z-index: -1;
 }
 
 .glow-1 {
-    background: radial-gradient(circle, var(--neon-blue) 0%, transparent 70%);
-    top: -10%;
-    right: -5%;
-    animation: floatGlow 18s ease-in-out infinite alternate;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.35) 0%, rgba(56, 139, 253, 0.08) 60%, transparent 100%);
+    top: -15%;
+    right: -10%;
+    animation: floatGlow1 25s ease-in-out infinite alternate;
 }
 
 .glow-2 {
-    background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
-    bottom: -10%;
-    left: -5%;
-    animation: floatGlow 22s ease-in-out infinite alternate-reverse;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(circle, rgba(188, 140, 255, 0.35) 0%, rgba(121, 82, 179, 0.08) 60%, transparent 100%);
+    bottom: -15%;
+    left: -10%;
+    animation: floatGlow2 30s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes floatGlow {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(6vw, 4vh) scale(1.15); }
+.glow-3 {
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, rgba(56, 139, 253, 0.3) 0%, transparent 100%);
+    top: 35%;
+    left: 25%;
+    animation: floatGlow3 28s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+    50% { transform: translate(6vw, 4vh) scale(1.15); opacity: 0.35; }
+    100% { transform: translate(-4vw, 8vh) scale(0.95); opacity: 0.28; }
+}
+
+@keyframes floatGlow2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.28; }
+    50% { transform: translate(-5vw, -6vh) scale(0.9); opacity: 0.22; }
+    100% { transform: translate(5vw, 4vh) scale(1.1); opacity: 0.32; }
+}
+
+@keyframes floatGlow3 {
+    0% { transform: translate(0, 0) scale(0.95); opacity: 0.2; }
+    50% { transform: translate(8vw, -5vh) scale(1.1); opacity: 0.3; }
+    100% { transform: translate(-4vw, 5vh) scale(1); opacity: 0.24; }
 }
 
 /* App布局容器 */
@@ -582,111 +605,7 @@ a.info-val:hover {
     font-weight: bold;
 }
 
-/* 折叠控制台 */
-.accordion-container {
-    margin-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 12px;
-}
 
-.accordion-trigger {
-    background: transparent;
-    border: none;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color var(--transition-speed);
-}
-
-.accordion-trigger:hover {
-    color: var(--neon-blue);
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-}
-
-.accordion-content.open {
-    max-height: 300px;
-}
-
-.arrow-icon {
-    transition: transform var(--transition-speed);
-    font-size: 0.75rem;
-}
-
-.accordion-trigger.active .arrow-icon {
-    transform: rotate(180deg);
-}
-
-/* 结构拓扑图 */
-.mermaid-mock {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.svg-graph {
-    width: 100%;
-    height: auto;
-}
-
-.node {
-    fill: #141b24;
-    stroke: #30363d;
-    stroke-width: 1.5;
-}
-
-.start-node {
-    fill: rgba(57, 211, 83, 0.08);
-    stroke: #39d353;
-}
-
-.end-node {
-    fill: rgba(248, 81, 73, 0.08);
-    stroke: #f85149;
-}
-
-.chat-node {
-    fill: rgba(245, 159, 0, 0.08);
-    stroke: #f59f00;
-}
-
-.sim-node {
-    fill: rgba(56, 139, 253, 0.08);
-    stroke: #388bfd;
-}
-
-.node-text {
-    fill: #c9d1d9;
-    font-size: 9px;
-    font-weight: 500;
-    text-anchor: middle;
-}
-
-.line-arrow {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.15);
-    stroke-width: 1.5;
-}
-
-.reflex-arrow {
-    stroke: var(--neon-purple);
-    stroke-width: 1.2;
-}
-
-.reflex-text {
-    fill: var(--neon-purple);
-    font-size: 8px;
-    text-anchor: middle;
-}
 
 /* 时间轴 */
 .timeline-container {
@@ -870,6 +789,30 @@ body.pm-active .pm-content {
     background: var(--bg-darker);
     position: relative;
     z-index: 10;
+}
+
+/* 弹窗通知样式 */
+.toast-notification {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: rgba(4, 13, 36, 0.92);
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue-glow);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 9999;
+}
+.toast-notification.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
 
 /* 响应式适配 */

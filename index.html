@@ -66,8 +66,8 @@
                     <div class="info-item">
                         <i class="fa-solid fa-phone"></i>
                         <div class="info-content">
-                            <span class="info-label">联系电话</span>
-                            <span class="info-val">(+86) 183-8502-8811</span>
+                            <span class="info-label">联系电话 / 微信</span>
+                            <span class="info-val">(+86) 183-8502-8811 (同号)</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -83,7 +83,7 @@
                 <div class="social-links">
                     <a href="https://github.com/" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="mailto:mahm8811@163.com" class="social-icon" title="联系我"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#" class="social-icon" title="微信: mahm8811"><i class="fa-brands fa-weixin"></i></a>
+                    <a href="javascript:void(0)" class="social-icon" id="wechat-btn" title="点击复制微信: 183-8502-8811" onclick="copyWeChat()"><i class="fa-brands fa-weixin"></i></a>
                 </div>
             </div>
         </aside>
@@ -224,63 +224,11 @@
                     <div class="pm-content">
                         <h4 class="sub-header"><i class="fa-solid fa-compass"></i> 产品设计亮点</h4>
                         <ul class="bullet-list">
-                            <li>针对“人工仿真调参门槛高、试错成本贵、多方案比对难”的痛点，主导了 0-1 产品路径和功能地图。</li>
+                            <li>针对“人工仿真调参门槛高、试错成本贵、多方案比对难”的痛点，主导了 0-1 产品路径 and 功能地图。</li>
                             <li>定义“自然语言指令直达 Abaqus 物理引擎”的低代码工作流，大幅降低非专业人员的使用壁垒。</li>
                             <li>设计双路策略 Agent 对比收敛机制，由 Planner 分发至偏好安全边界与偏好极限寻优的智能体，自收敛出最佳方案。</li>
                             <li>引入 A/B 测试支持模型提示词的演进评估，实现业务效能的跨越式提升。</li>
                         </ul>
-                    </div>
-
-                    <!-- 交互式架构折叠 -->
-                    <div class="accordion-container">
-                        <button class="accordion-trigger" onclick="toggleAccordion(this)">
-                            <i class="fa-solid fa-network-wired"></i> 点击查看 CAE-Agent 运行拓扑图 <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="mermaid-mock">
-                                <svg viewBox="0 0 800 240" class="svg-graph">
-                                    <!-- 节点定义 -->
-                                    <rect x="20" y="90" width="120" height="40" rx="6" class="node start-node" />
-                                    <text x="80" y="115" class="node-text">用户意图输入</text>
-                                    
-                                    <path d="M 140 110 L 190 110" class="line-arrow" marker-end="url(#arrow)" />
-                                    
-                                    <rect x="190" y="90" width="120" height="40" rx="6" class="node" />
-                                    <text x="250" y="115" class="node-text">Planner意图分流</text>
-
-                                    <!-- 分流线 -->
-                                    <path d="M 310 110 L 350 50 L 390 50" class="line-arrow" marker-end="url(#arrow)" />
-                                    <path d="M 310 110 L 350 170 L 390 170" class="line-arrow" marker-end="url(#arrow)" />
-
-                                    <rect x="390" y="30" width="120" height="40" rx="6" class="node chat-node" />
-                                    <text x="450" y="55" class="node-text">Chat/MCP 检索</text>
-
-                                    <rect x="390" y="150" width="120" height="40" rx="6" class="node sim-node" />
-                                    <text x="450" y="175" class="node-text">Extractor 参数提取</text>
-
-                                    <path d="M 510 170 L 560 170" class="line-arrow" marker-end="url(#arrow)" />
-
-                                    <rect x="560" y="150" width="100" height="40" rx="6" class="node sim-node" />
-                                    <text x="610" y="175" class="node-text">沙箱执行</text>
-
-                                    <path d="M 660 170 L 710 170" class="line-arrow" marker-end="url(#arrow)" />
-
-                                    <rect x="710" y="150" width="70" height="40" rx="6" class="node end-node" />
-                                    <text x="745" y="175" class="node-text">Critic准入</text>
-
-                                    <!-- 反思自愈流线 -->
-                                    <path d="M 745 150 C 745 100, 450 100, 450 150" class="line-arrow reflex-arrow" stroke-dasharray="5,5" marker-end="url(#arrow)" />
-                                    <text x="600" y="115" class="reflex-text">物理异常 (Reflexion 自愈重试)</text>
-                                    
-                                    <!-- 箭头定义 -->
-                                    <defs>
-                                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b5bdb" />
-                                        </marker>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
