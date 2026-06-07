@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,13 @@
     <!-- 引入 Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome 图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="dark-theme dev-active">
     <!-- 背景画布：粒子动态效果 -->
     <canvas id="particles-canvas"></canvas>
@@ -32,7 +36,7 @@
                 <h1 class="profile-name">梅傲寒</h1>
                 <p class="profile-title Outfit">Mei Aohan</p>
                 <div class="profile-tagline">
-                    土木与 AI 交叉背景，用 Agent 智能体赋能高精尖仿真与调度场景
+                    工程与 AI 交叉背景，用 Agent 智能体赋能高精尖仿真与调度场景
                 </div>
 
                 <!-- 视角切换器 (仅在简历Tab可见) -->
@@ -89,9 +93,12 @@
 
                 <!-- 社交/开源链接 -->
                 <div class="social-links">
-                    <a href="https://github.com/" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:mahm8811@163.com" class="social-icon" title="联系我"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="javascript:void(0)" class="social-icon" id="wechat-btn" title="点击复制微信: 18385028811" onclick="copyWeChat()"><i class="fa-brands fa-weixin"></i></a>
+                    <a href="https://github.com/" target="_blank" class="social-icon" title="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:mahm8811@163.com" class="social-icon" title="联系我"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a href="javascript:void(0)" class="social-icon" id="wechat-btn" title="点击复制微信: 18385028811"
+                        onclick="copyWeChat()"><i class="fa-brands fa-weixin"></i></a>
                 </div>
             </div>
         </aside>
@@ -100,10 +107,14 @@
         <main class="main-content">
             <!-- 顶部导航 Tab -->
             <nav class="portfolio-nav">
-                <button class="nav-tab active" onclick="switchTab('resume')"><i class="fa-solid fa-file-invoice"></i> 个人简历</button>
-                <button class="nav-tab" onclick="switchTab('cae-agent')"><i class="fa-solid fa-robot"></i> CAE-Agent 项目</button>
-                <button class="nav-tab" onclick="switchTab('agentops')"><i class="fa-solid fa-chart-line"></i> AgentOps 平台</button>
-                <button class="nav-tab" onclick="switchTab('dispatch')"><i class="fa-solid fa-truck-ramp-box"></i> 智能调度系统</button>
+                <button class="nav-tab active" onclick="switchTab('resume')"><i class="fa-solid fa-file-invoice"></i>
+                    个人简历</button>
+                <button class="nav-tab" onclick="switchTab('cae-agent')"><i class="fa-solid fa-robot"></i> CAE-Agent
+                    项目</button>
+                <button class="nav-tab" onclick="switchTab('agentops')"><i class="fa-solid fa-chart-line"></i> AgentOps
+                    平台</button>
+                <button class="nav-tab" onclick="switchTab('dispatch')"><i class="fa-solid fa-truck-ramp-box"></i>
+                    智能调度系统</button>
             </nav>
 
             <!-- ==================== TAB 1: 个人简历 ==================== -->
@@ -113,12 +124,15 @@
                     <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> 个人简介</h2>
                     <div class="dev-content">
                         <p class="paragraph">
-                            推免至西南交通大学攻读硕士（前 8%），主攻智慧交通大模型应用与智能决策。掌握运筹优化算法与大模型核心技术，致力于将前沿的<strong>反思型智能体（Reflexion Agent）</strong>和<strong>模型上下文协议（MCP）</strong>标准应用于复杂工业 CAE 仿真和设备调度等重工业垂直场景，从零构建了 CAE-Agent 等多个高可用系统。
+                            推免至西南交通大学攻读硕士（前 8%），主攻智慧交通大模型应用与智能决策。掌握运筹优化算法与大模型核心技术，致力于将前沿的<strong>反思型智能体（Reflexion
+                                Agent）</strong>和<strong>模型上下文协议（MCP）</strong>标准应用于复杂工业 CAE 仿真和设备调度等重工业垂直场景，从零构建了
+                            CAE-Agent 等多个高可用系统。
                         </p>
                     </div>
                     <div class="pm-content">
                         <p class="paragraph">
-                            具备交叉学科背景与优秀的市场敏锐度，主导了 RAG 与多智能体等 AI 产品的 0 到 1 全生命周期设计。秉承<strong>“评测即产品”</strong>的迭代思维，善于利用 RAGAS、LLM-as-a-Judge 对复杂大模型项目进行量化评测与降本优化。曾任学生会轮值主席，统筹千人级大型项目交付，具备高抗压与出色的跨团队协同能力。
+                            具备交叉学科背景与优秀的市场敏锐度，主导了 RAG 与多智能体等 AI 产品的 0 到 1 全生命周期设计。秉承<strong>“评测即产品”</strong>的迭代思维，善于利用
+                            RAGAS、LLM-as-a-Judge 对复杂大模型项目进行量化评测与降本优化。曾任学生会轮值主席，统筹千人级大型项目交付，具备高抗压与出色的跨团队协同能力。
                         </p>
                     </div>
                 </section>
@@ -202,9 +216,10 @@
                 <!-- 核心项目经历 -->
                 <section class="content-section card-glass projects-section">
                     <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> 项目经验摘要</h2>
-                    
+
                     <!-- 项目一: CAE-Agent -->
-                    <div class="project-card neon-border-blue" onclick="switchTab('cae-agent')" style="cursor: pointer;">
+                    <div class="project-card neon-border-blue" onclick="switchTab('cae-agent')"
+                        style="cursor: pointer;">
                         <div class="project-header">
                             <div class="project-info">
                                 <span class="project-badge">核心系统</span>
@@ -212,7 +227,7 @@
                             </div>
                             <span class="project-time">2025.12 - 至今</span>
                         </div>
-                        
+
                         <div class="metrics-grid">
                             <div class="metric-card">
                                 <span class="metric-num text-glow-blue">4 h</span>
@@ -230,7 +245,8 @@
 
                         <div class="dev-content">
                             <p class="paragraph" style="font-size: 0.88rem; color: var(--color-text-muted);">
-                                基于 <strong>LangGraph</strong> 编排仿真有向有权决策状态机。通过<strong>双核心记忆架构</strong>进行参数检索，使用 <strong>Critic 物理准入闸门</strong> 进行自愈反思重试。点击查看技术细节...
+                                基于 <strong>LangGraph</strong> 编排仿真有向有权决策状态机。通过<strong>双核心记忆架构</strong>进行参数检索，使用
+                                <strong>Critic 物理准入闸门</strong> 进行自愈反思重试。点击查看技术细节...
                             </p>
                         </div>
                         <div class="pm-content">
@@ -241,7 +257,8 @@
                     </div>
 
                     <!-- 项目二: AgentOps -->
-                    <div class="project-card neon-border-purple" onclick="switchTab('agentops')" style="cursor: pointer;">
+                    <div class="project-card neon-border-purple" onclick="switchTab('agentops')"
+                        style="cursor: pointer;">
                         <div class="project-header">
                             <div class="project-info">
                                 <span class="project-badge purple">独立自研</span>
@@ -267,7 +284,8 @@
 
                         <div class="dev-content">
                             <p class="paragraph" style="font-size: 0.88rem; color: var(--color-text-muted);">
-                                开发<strong>低侵入式埋点探针探针</strong>与 Trace ID 透传协议，基于 <strong>RAGAS 框架</strong> 与裁判大模型自动审查，实现全链路瀑布图监控。点击查看技术细节...
+                                开发<strong>低侵入式埋点探针探针</strong>与 Trace ID 透传协议，基于 <strong>RAGAS 框架</strong>
+                                与裁判大模型自动审查，实现全链路瀑布图监控。点击查看技术细节...
                             </p>
                         </div>
                         <div class="pm-content">
@@ -304,7 +322,8 @@
 
                         <div class="dev-content">
                             <p class="paragraph" style="font-size: 0.88rem; color: var(--color-text-muted);">
-                                融合 <strong>NSGA-II 算法与熵权-TOPSIS</strong> 进行装备选型寻优，<strong>重构 A* 启发式代估函数</strong>并剪枝解决时空冲突，成果获得<strong>一项国家发明专利</strong>。点击查看算法细节...
+                                融合 <strong>NSGA-II 算法与熵权-TOPSIS</strong> 进行装备选型寻优，<strong>重构 A*
+                                    启发式代估函数</strong>并剪枝解决时空冲突，成果获得<strong>一项国家发明专利</strong>。点击查看算法细节...
                             </p>
                         </div>
                         <div class="pm-content">
@@ -353,7 +372,8 @@
                         <span class="terminal-title">MeiAohan@Workspace:~</span>
                     </div>
                     <div class="terminal-body" id="terminal-screen">
-                        <div class="terminal-line">Welcome to Mei Aohan's interactive profile. Type <span class="term-highlight">help</span> to see available commands.</div>
+                        <div class="terminal-line">Welcome to Mei Aohan's interactive profile. Type <span
+                                class="term-highlight">help</span> to see available commands.</div>
                         <div class="terminal-line last-input-line">
                             <span class="terminal-prompt">Guest@MeiAohan:~$</span>
                             <input type="text" id="terminal-input" autocomplete="off" autofocus>
@@ -375,28 +395,35 @@
                     </div>
 
                     <div class="project-links-row">
-                        <a href="https://github.com/YOUR_GITHUB_USERNAME/CAE_Agent_project" target="_blank" class="btn-link"><i class="fa-brands fa-github"></i> 查看代码仓库 (私有)</a>
-                        <a href="javascript:void(0)" onclick="showNotification('演示服务正在本地物理沙箱部署中...')" class="btn-link btn-secondary"><i class="fa-solid fa-circle-play"></i> 访问演示地址</a>
+                        <a href="https://github.com/YOUR_GITHUB_USERNAME/CAE_Agent_project" target="_blank"
+                            class="btn-link"><i class="fa-brands fa-github"></i> 查看代码仓库 (私有)</a>
+                        <a href="javascript:void(0)" onclick="showNotification('演示服务正在本地物理沙箱部署中...')"
+                            class="btn-link btn-secondary"><i class="fa-solid fa-circle-play"></i> 访问演示地址</a>
                     </div>
 
                     <div class="detail-section">
                         <h3><i class="fa-solid fa-circle-info"></i> 项目背景与痛点</h3>
                         <p class="paragraph">
-                            在传统的重工业设计中，有限元分析（CAE）和仿真（如 Abaqus 物理引擎）极其复杂，高度依赖资深工程师手工调试网格、调整边界荷载和物理参数。单次方案迭代往往需要花费 3 到 5 天时间，且仿真出错的定位成本极高。项目旨在利用大语言模型（LLM）的多步骤规划和反思自愈能力，构建一个“自然语言输入，自动决策与执行仿真”的智能体系统。
+                            在传统的重工业设计中，有限元分析（CAE）和仿真（如 Abaqus 物理引擎）极其复杂，高度依赖资深工程师手工调试网格、调整边界荷载和物理参数。单次方案迭代往往需要花费 3 到 5
+                            天时间，且仿真出错的定位成本极高。项目旨在利用大语言模型（LLM）的多步骤规划和反思自愈能力，构建一个“自然语言输入，自动决策与执行仿真”的智能体系统。
                         </p>
                     </div>
 
                     <div class="detail-section">
                         <h3><i class="fa-solid fa-layer-group"></i> 核心系统架构</h3>
                         <p class="paragraph">
-                            本系统基于 <strong>LangGraph</strong> 编排有向有权状态图（Directed Acyclic Graph with States），以状态共享机制为核心，采用 <strong>Executor-Critic (执行者-裁判者)</strong> 双轨演进架构：
+                            本系统基于 <strong>LangGraph</strong> 编排有向有权状态图（Directed Acyclic Graph with States），以状态共享机制为核心，采用
+                            <strong>Executor-Critic (执行者-裁判者)</strong> 双轨演进架构：
                         </p>
                         <ul class="bullet-list detail-bullets">
-                            <li><strong>Planner 节点 (意图路由)</strong>：对用户自然语言输入进行分析，判断是“常规技术咨询(Chat/RAG)”还是“仿真执行(Simulate)”，并进行参数初置。</li>
+                            <li><strong>Planner 节点
+                                    (意图路由)</strong>：对用户自然语言输入进行分析，判断是“常规技术咨询(Chat/RAG)”还是“仿真执行(Simulate)”，并进行参数初置。</li>
                             <li><strong>Extractor 节点 (参数提取)</strong>：从历史文档、规范以及用户对话中提取并补全结构力学参数，经过严格的物理合规校验。</li>
                             <li><strong>Coder 节点 (代码渲染)</strong>：根据提取的参数自动渲染 Abaqus Python 运行脚本。</li>
-                            <li><strong>Executor 节点 (物理沙箱)</strong>：在受控的 Docker 仿真沙箱中拉起 Abaqus 执行仿真脚本，并捕获 stderr/stdout 运行日志。</li>
-                            <li><strong>Critic 节点 (物理准入/自愈)</strong>：根据执行结果和物理边界阈值判断仿真是否通过。若仿真报错或未通过，自动携带报错日志回流给 Extractor 节点触发 <strong>Reflexion 反思重试</strong> 机制。</li>
+                            <li><strong>Executor 节点 (物理沙箱)</strong>：在受控的 Docker 仿真沙箱中拉起 Abaqus 执行仿真脚本，并捕获 stderr/stdout
+                                运行日志。</li>
+                            <li><strong>Critic 节点 (物理准入/自愈)</strong>：根据执行结果和物理边界阈值判断仿真是否通过。若仿真报错或未通过，自动携带报错日志回流给
+                                Extractor 节点触发 <strong>Reflexion 反思重试</strong> 机制。</li>
                         </ul>
                     </div>
 
@@ -405,11 +432,13 @@
                         <div class="sub-tech-grid">
                             <div class="sub-tech-card">
                                 <h4>双核心记忆架构</h4>
-                                <p>利用滑动窗口记忆 Compressor 压缩短期上下文，减少 Token 浪费；同时将历史成功仿真参数保存至 ChromaDB 向量数据库，新会话启动时通过向量检索实现“经验闪回”，加快调优收敛。</p>
+                                <p>利用滑动窗口记忆 Compressor 压缩短期上下文，减少 Token 浪费；同时将历史成功仿真参数保存至 ChromaDB
+                                    向量数据库，新会话启动时通过向量检索实现“经验闪回”，加快调优收敛。</p>
                             </div>
                             <div class="sub-tech-card">
                                 <h4>FastMCP 工具通道</h4>
-                                <p>采用 Anthropic 推出的 Model Context Protocol (模型上下文协议) 规范，将外部 RAG 工具和材料规范库封装为 MCP Server，智能体通过标准化 HTTP/SSE 异步通道与之通信，实现零耦合的热插拔工具调用。</p>
+                                <p>采用 Anthropic 推出的 Model Context Protocol (模型上下文协议) 规范，将外部 RAG 工具和材料规范库封装为 MCP
+                                    Server，智能体通过标准化 HTTP/SSE 异步通道与之通信，实现零耦合的热插拔工具调用。</p>
                             </div>
                         </div>
                     </div>
@@ -447,14 +476,17 @@
                     </div>
 
                     <div class="project-links-row">
-                        <a href="https://github.com/YOUR_GITHUB_USERNAME/CAE_Eval_Platform" target="_blank" class="btn-link"><i class="fa-brands fa-github"></i> 查看代码仓库 (私有)</a>
-                        <a href="javascript:void(0)" onclick="showNotification('评测服务已下线，数据分析看板已归档。')" class="btn-link btn-secondary"><i class="fa-solid fa-box-archive"></i> 访问历史大盘</a>
+                        <a href="https://github.com/YOUR_GITHUB_USERNAME/CAE_Eval_Platform" target="_blank"
+                            class="btn-link"><i class="fa-brands fa-github"></i> 查看代码仓库 (私有)</a>
+                        <a href="javascript:void(0)" onclick="showNotification('评测服务已下线，数据分析看板已归档。')"
+                            class="btn-link btn-secondary"><i class="fa-solid fa-box-archive"></i> 访问历史大盘</a>
                     </div>
 
                     <div class="detail-section">
                         <h3><i class="fa-solid fa-circle-info"></i> 项目背景与痛点</h3>
                         <p class="paragraph">
-                            随着多智能体协同（Multi-Agent）系统的复杂度上升，智能体的决策过程成为了一个完全的“黑盒”：智能体在哪个节点出现幻觉、调用了什么工具、耗时分布如何、以及 RAG 检索的文档到底准不准，开发和产品团队在过去只能依赖人工拉取日志排查，故障定位极其耗时，严重阻碍产品迭代。
+                            随着多智能体协同（Multi-Agent）系统的复杂度上升，智能体的决策过程成为了一个完全的“黑盒”：智能体在哪个节点出现幻觉、调用了什么工具、耗时分布如何、以及 RAG
+                            检索的文档到底准不准，开发和产品团队在过去只能依赖人工拉取日志排查，故障定位极其耗时，严重阻碍产品迭代。
                         </p>
                     </div>
 
@@ -465,7 +497,8 @@
                         </p>
                         <ul class="bullet-list detail-bullets">
                             <li><strong>装饰器探针埋点</strong>：使用 Python 装饰器和上下文管理器拦截智能体的核心节点，自动记录进入/退出参数、消耗 Token 及各层耗时。</li>
-                            <li><strong>Trace ID 贯穿管道</strong>：设计了 Trace ID 封装与传输协议，支持在多进程、多服务以及穿透 MCP 管道时保持全局一致的 Trace 追踪，实现调用流拓扑瀑布图展示。</li>
+                            <li><strong>Trace ID 贯穿管道</strong>：设计了 Trace ID 封装与传输协议，支持在多进程、多服务以及穿透 MCP 管道时保持全局一致的 Trace
+                                追踪，实现调用流拓扑瀑布图展示。</li>
                             <li><strong>异步队列安全上报</strong>：采用独立异步线程和线程安全队列缓存储存监测数据，避免监控组件拖慢智能体核心业务流程的响应速度。</li>
                         </ul>
                     </div>
@@ -476,9 +509,12 @@
                             秉承“评测即产品”的产品思维，平台集成了领先的评测引擎体系：
                         </p>
                         <ul class="bullet-list detail-bullets">
-                            <li><strong>RAG 质量化量测</strong>：集成 <strong>RAGAS 框架</strong>，对智能体检索模块进行 Faithfulness（忠实度）、Answer Relevance（回答相关度）、Context Precision（检索精准度）三大维度的动态打分。</li>
-                            <li><strong>决策审计 (LLM-as-a-Judge)</strong>：选用 **DeepSeek 裁判大模型** 建立裁判机制，通过设计高强度的 Prompt 模板自动审计智能体工具调用的合理性。</li>
-                            <li><strong>可视化瀑布大盘</strong>：基于 Streamlit 和 Plotly 搭建瀑布图面板，展示从用户提问到最终输出的完整 Trace Span 链路，帮助开发人员进行耗时瓶颈分析与下钻诊断。</li>
+                            <li><strong>RAG 质量化量测</strong>：集成 <strong>RAGAS 框架</strong>，对智能体检索模块进行
+                                Faithfulness（忠实度）、Answer Relevance（回答相关度）、Context Precision（检索精准度）三大维度的动态打分。</li>
+                            <li><strong>决策审计 (LLM-as-a-Judge)</strong>：选用 **DeepSeek 裁判大模型** 建立裁判机制，通过设计高强度的 Prompt
+                                模板自动审计智能体工具调用的合理性。</li>
+                            <li><strong>可视化瀑布大盘</strong>：基于 Streamlit 和 Plotly 搭建瀑布图面板，展示从用户提问到最终输出的完整 Trace Span
+                                链路，帮助开发人员进行耗时瓶颈分析与下钻诊断。</li>
                         </ul>
                     </div>
 
@@ -515,8 +551,10 @@
                     </div>
 
                     <div class="project-links-row">
-                        <a href="javascript:void(0)" class="btn-link"><i class="fa-solid fa-award"></i> 荣获国家发明专利 (一项)</a>
-                        <a href="javascript:void(0)" class="btn-link btn-secondary"><i class="fa-solid fa-trophy"></i> 创新建造大赛全国三等奖</a>
+                        <a href="javascript:void(0)" class="btn-link"><i class="fa-solid fa-award"></i> 荣获国家发明专利
+                            (一项)</a>
+                        <a href="javascript:void(0)" class="btn-link btn-secondary"><i class="fa-solid fa-trophy"></i>
+                            创新建造大赛全国三等奖</a>
                     </div>
 
                     <div class="detail-section">
@@ -532,9 +570,13 @@
                             项目团队研发并落地了双核心运筹算法体系：
                         </p>
                         <ul class="bullet-list detail-bullets">
-                            <li><strong>工期-成本多目标平衡最优 (NSGA-II)</strong>：融合多目标遗传算法（NSGA-II）与**熵权-TOPSIS**决策机制，在海量的配置矩阵中智能逼近帕累托前沿，自适应选择成本最低、工期最短的特种装备最优配置组合。</li>
-                            <li><strong>窄通道动态避障与路径纠偏 (A* 算法重构)</strong>：针对隧道施工的窄通道时空阻隔约束，通过<strong>重构 A* 启发式代估函数</strong>并配合搜索树剪枝，实现了多设备行进冲突在线避碰，动态纠偏响应延迟控制在秒级以内。</li>
-                            <li><strong>工程落地与交付</strong>：后端基于 SpringBoot 搭建调度核心，对接前端现场物联传感器和数据库，成功在真实公路施工路段完成落地部署与高可用测试。</li>
+                            <li><strong>工期-成本多目标平衡最优
+                                    (NSGA-II)</strong>：融合多目标遗传算法（NSGA-II）与**熵权-TOPSIS**决策机制，在海量的配置矩阵中智能逼近帕累托前沿，自适应选择成本最低、工期最短的特种装备最优配置组合。
+                            </li>
+                            <li><strong>窄通道动态避障与路径纠偏 (A* 算法重构)</strong>：针对隧道施工的窄通道时空阻隔约束，通过<strong>重构 A*
+                                    启发式代估函数</strong>并配合搜索树剪枝，实现了多设备行进冲突在线避碰，动态纠偏响应延迟控制在秒级以内。</li>
+                            <li><strong>工程落地与交付</strong>：后端基于 SpringBoot 搭建调度核心，对接前端现场物联传感器和数据库，成功在真实公路施工路段完成落地部署与高可用测试。
+                            </li>
                         </ul>
                     </div>
 
@@ -567,4 +609,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
